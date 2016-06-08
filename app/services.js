@@ -1,19 +1,15 @@
 (function() {
 'use strict';
 
-    angular
-        .module('myApp.services')
-        .service('Service', Service);
+    angular.module('myApp.services',[]).service('newsService', newsService);
 
-    Service.$inject = ['$http','APIURL', $log];
-    function Service($http, APIURL, $log) {
+    newsService.$inject = ['$http','APIURL', '$log'];
+    function newsService($http, APIURL, $log) {
         return {
             getNews: getNews
         };
         function getNews(params) {
-            return $http.get(APIURL)
-            .then(getNewsComplete)
-            .catch(getNewsFailed);
+            return $http.get(APIURL).then(getNewsComplete).catch(getNewsFailed);
 
             function getNewsComplete(response) {
                 return response.data.results;

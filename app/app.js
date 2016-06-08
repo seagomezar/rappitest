@@ -2,15 +2,22 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version',
+  'ui.router',
+  'myApp.controllers',
   'myApp.services'
 ]).
-constant('APIURL','/news_mock.json').
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
-
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+  constant('APIURL', 'http://localhost:8000/news_mock.json').
+  config(function ($stateProvider, $urlRouterProvider) {
+    //
+    // For any unmatched url, redirect to /state1
+    $urlRouterProvider.otherwise('/a');
+    //
+    // Now set up the states
+    $stateProvider
+      .state('state1', {
+        url: '/a',
+        templateUrl: 'news/index.html',
+        controller: 'NewsController',
+        controllerAs: 'nc'
+      })
+  });
