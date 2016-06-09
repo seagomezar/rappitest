@@ -13,7 +13,7 @@ describe('my app', function() {
   });
 
 
-  describe('view1', function() {
+  describe('index view', function() {
 
     beforeEach(function() {
       browser.get('index.html');

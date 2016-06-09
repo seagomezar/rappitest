@@ -1,9 +1,30 @@
-<div data-ng-repeat="new in nc.news">
-    <img ng-src="{{new.image}}" width="80px" alt="{{new.title}}"/>
-    <p>{{new.title}}</p>
-    <div>
-        <img ng-src="{{new.image}}" alt="{{new.title}}"/>
-        <p>{{new.title}}</p>
-        <p>{{new.content}}</p>
-    </div>
-</div>
+<md-content class="md-padding">
+    <md-toolbar>
+        <md-fab-actions class="md-toolbar-tools">
+            <md-button aria-label="comment" class="md-icon-button">
+                <md-icon>drag_handle</md-icon>
+            </md-button>
+        </md-fab-actions>
+    </md-toolbar>
+    <md-list flex class="md-padding">
+        <md-list-item ng-repeat-start="new in nc.news" class="md-3-line" ng-click="null">
+            <img ng-src="{{new.image}}" alt="{{new.title}}" class="md-avatar" />
+            <div class="md-list-item-text" layout="column">
+                <h3>{{new.title | lowercase | capitalize}}</h3>
+            </div>
+        </md-list-item>
+        <md-card ng-repeat-end>
+            <md-card-title>
+                <md-card-title-media>
+                    <div class="md-media-lg card-media">
+                        <img ng-src="{{new.image}}" alt="{{new.title}}" />
+                    </div>
+                </md-card-title-media>
+                <md-card-title-text class="md-padding">
+                    <span class="md-headline">{{new.title | lowercase | capitalize}}</span>
+                    <span class="md-subhead">{{new.content | lowercase | capitalize}}</span>
+                </md-card-title-text>
+            </md-card-title>
+        </md-card>
+    </md-list>
+</md-content>
