@@ -8,7 +8,6 @@
   NewsController.$inject = ['$scope', 'newsService', '$log'];
   function NewsController($scope, newsService, $log) {
     var vm = this;
-    
 
     activate();
 
