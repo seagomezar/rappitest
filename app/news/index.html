@@ -1,1 +1,9 @@
-<p>This is the partial for view 1.</p>
+<div data-ng-repeat="new in nc.news">
+    <img ng-src="{{new.image}}" width="80px" alt="{{new.title}}"/>
+    <p>{{new.title}}</p>
+    <div>
+        <img ng-src="{{new.image}}" alt="{{new.title}}"/>
+        <p>{{new.title}}</p>
+        <p>{{new.content}}</p>
+    </div>
+</div>

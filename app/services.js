@@ -12,7 +12,8 @@
             return $http.get(APIURL).then(getNewsComplete).catch(getNewsFailed);
 
             function getNewsComplete(response) {
-                return response.data.results;
+                $log.debug(response.data);
+                return response.data;
             }
 
             function getNewsFailed(error) {
