@@ -15,6 +15,24 @@
   function NewsController(newsService, $log) {
     var vm = this;
 
+    vm.showNew = function(currentNew){
+      vm.news.filter(function(e){
+        if(e.id === currentNew.id){
+          if(currentNew.show == 1){
+            vm.headTitle = '';
+            currentNew.show = 0;
+          }
+          else{
+            vm.headTitle = currentNew.title;
+            currentNew.show = 1;
+          }
+        }
+        else{
+          e.show = 0;
+        }
+      });
+    };
+
 
     activate();
 

@@ -4,16 +4,17 @@
             <md-button aria-label="comment" class="md-icon-button">
                 <md-icon>drag_handle</md-icon>
             </md-button>
+            <p>{{nc.headTitle  | lowercase | capitalize}}</p>
         </md-fab-actions>
     </md-toolbar>
     <md-list flex class="md-padding">
-        <md-list-item ng-repeat-start="new in nc.news" class="md-3-line" ng-click="null">
+        <md-list-item ng-repeat-start="new in nc.news" class="md-3-line" ng-click="nc.showNew(new)">
             <img ng-src="{{new.image}}" alt="{{new.title}}" class="md-avatar" />
             <div class="md-list-item-text" layout="column">
                 <h3>{{new.title | lowercase | capitalize}}</h3>
             </div>
         </md-list-item>
-        <md-card ng-repeat-end>
+        <md-card ng-repeat-end ng-show="new.show === 1">
             <md-card-title>
                 <md-card-title-media>
                     <div class="md-media-lg card-media">
