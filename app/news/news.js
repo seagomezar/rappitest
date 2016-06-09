@@ -15,16 +15,24 @@
   function NewsController(newsService, $log) {
     var vm = this;
 
+    vm.showList = false;
+
+    vm.showNews = function(){
+      vm.showList = !vm.showList;
+      vm.showNew({});
+    };
+
     vm.showNew = function(currentNew){
+
+      vm.headTitle = '';
       vm.news.filter(function(e){
         if(e.id === currentNew.id){
-          if(currentNew.show == 1){
-            vm.headTitle = '';
-            currentNew.show = 0;
+          if(currentNew.show){
+            currentNew.show = false;
           }
           else{
             vm.headTitle = currentNew.title;
-            currentNew.show = 1;
+            currentNew.show = true;
           }
         }
         else{
