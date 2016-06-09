@@ -7,7 +7,7 @@ describe('my app', function() {
 
 
 
-  it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
+  it('should automatically redirect to / when location hash/fragment is empty', function() {
     browser.get('index.html');
     expect(browser.getLocationAbsUrl()).toMatch("/");
   });
@@ -22,7 +22,7 @@ describe('my app', function() {
     
 
 
-    it('should render view1 when user navigates to /view1', function() {
+    it('should render news/index.html when user navigates to /', function() {
       browser.waitForAngular();
       expect(element.all(by.css('p')).first().getText()).
         toMatch(/AGOTADO CHALECO DOBLE FAZ BOGOTÁ HUMANA/);
