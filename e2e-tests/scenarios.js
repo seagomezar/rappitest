@@ -5,38 +5,29 @@
 describe('my app', function() {
 
 
+
+
   it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
     browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/view1");
+    expect(browser.getLocationAbsUrl()).toMatch("/");
   });
 
 
   describe('view1', function() {
 
     beforeEach(function() {
-      browser.get('index.html#!/view1');
+      browser.get('index.html');
     });
+
+    
 
 
     it('should render view1 when user navigates to /view1', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
+      browser.waitForAngular();
+      expect(element.all(by.css('p')).first().getText()).
+        toMatch(/AGOTADO CHALECO DOBLE FAZ BOGOTÁ HUMANA/);
     });
 
   });
 
-
-  describe('view2', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#!/view2');
-    });
-
-
-    it('should render view2 when user navigates to /view2', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 2/);
-    });
-
-  });
 });
