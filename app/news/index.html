@@ -1,31 +1,33 @@
-<md-content class="md-padding">
+<md-content>
     <md-toolbar>
         <md-fab-actions class="md-toolbar-tools">
             <md-button aria-label="comment" class="md-icon-button" ng-click="nc.showNews()">
-                <md-icon>drag_handle</md-icon>
+                <md-icon class="md-60" >drag_handle</md-icon>
             </md-button>
             <p>{{nc.headTitle  | lowercase | capitalize}}</p>
         </md-fab-actions>
     </md-toolbar>
-    <md-list flex class="md-padding" ng-show="nc.showList">
-        <md-list-item ng-repeat-start="new in nc.news" class="md-3-line" ng-click="nc.showNew(new)">
-            <img ng-src="{{new.image}}" alt="{{new.title}}" class="md-avatar" />
-            <div class="md-list-item-text" layout="column">
-                <h3>{{new.title | lowercase | capitalize}}</h3>
-            </div>
-        </md-list-item>
-        <md-card ng-repeat-end ng-show="new.show">
-            <md-card-title>
-                <md-card-title-media>
-                    <div class="md-media-lg card-media">
-                        <img ng-src="{{new.image}}" alt="{{new.title}}" />
-                    </div>
-                </md-card-title-media>
-                <md-card-title-text class="md-padding">
-                    <span class="md-headline">{{new.title | lowercase | capitalize}}</span>
-                    <span class="md-subhead">{{new.content | lowercase | capitalize}}</span>
-                </md-card-title-text>
-            </md-card-title>
-        </md-card>
-    </md-list>
+    <section>
+        <md-list flex class="md-padding" ng-show="nc.showList">
+            <md-list-item ng-repeat-start="new in nc.news" class="md-3-line" ng-click="nc.showNew(new)">
+                <img ng-src="{{new.image}}" alt="{{new.title}}" class="md-avatar" />
+                <div class="md-list-item-text" layout="column">
+                    <h3>{{new.title | lowercase | capitalize}}</h3>
+                </div>
+            </md-list-item>
+            <md-card ng-repeat-end ng-show="new.show">
+                <md-card-title>
+                    <md-card-title-media>
+                        <div class="md-media-lg card-media">
+                            <img ng-src="{{new.image}}" alt="{{new.title}}" />
+                        </div>
+                    </md-card-title-media>
+                    <md-card-title-text class="md-padding">
+                        <span class="md-headline">{{new.title | lowercase | capitalize}}</span>
+                        <span class="md-subhead">{{new.content | lowercase | capitalize}}</span>
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
+        </md-list>
+    </section>
 </md-content>

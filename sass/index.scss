@@ -1,3 +1,48 @@
-body{
-    background-color: red;
+$menu_color : #FF6654;
+$background_color: #394C5F;
+$white_color: #FFFFFF;
+$wrapper_color: #D4D4D4;
+$title_color: #DDEBEB;
+$text_color: #BDC9CE;
+$menu_radius: 10px;
+$external_padding: 10% 10% 0 10%;
+$list_margin: 10%;
+$menu_height: 80px;
+
+.material-icons.md-60 { font-size: 60px; }
+
+md-content{
+    width: 100%;
+    min-height: 600px;
+    background-color: $background_color;
+    padding: $external_padding;
+    &>md-toolbar{
+        width: 80%;
+        height: $menu_height;
+        background-color: $menu_color !important;
+        border-top-left-radius: $menu_radius;
+        border-top-right-radius: $menu_radius;
+        &>md-fab-actions {
+            height: $menu_height !important;
+            max-height: $menu_height !important;
+            &>.md-fab-action-item {
+                &>.md-button.md-icon-button{
+                    width: $menu_height;
+                    height: $menu_height;
+                    &>md-icon{
+                        width: $menu_height;
+                        height: $menu_height;
+                    }
+                }
+            }
+        }
+    }
+    &>section{
+        width: 80%;
+        background-color: $wrapper_color;
+        min-height: 600px;
+    }
+            
 }
+
+

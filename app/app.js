@@ -6,13 +6,12 @@ angular.module('myApp', [
   'ngMaterial',
   'myApp.controllers',
   'myApp.services'
-]).
-  constant('APIURL', 'http://localhost:8000/news_mock.json').
-  config(function($routeProvider, $locationProvider) {
-  $routeProvider
-   .when('/', {
-    templateUrl: 'news/index.html',
-    controller: 'NewsController',
-    controllerAs: 'nc'
-  })
+])
+.constant('APIURL', 'http://localhost:8000/news_mock.json')
+.config(function($routeProvider, $locationProvider) {
+    $routeProvider.when('/', {
+      templateUrl: 'news/index.html',
+      controller: 'NewsController',
+      controllerAs: 'nc'
+    })
   });
