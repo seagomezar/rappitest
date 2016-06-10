@@ -4,7 +4,7 @@
             <md-button aria-label="comment" class="md-icon-button" ng-click="nc.showNews()">
                 <md-icon class="md-60" >drag_handle</md-icon>
             </md-button>
-            <h2>{{nc.headTitle  | lowercase | capitalize}}</h2>
+            <p>{{nc.headTitle  | lowercase | capitalize}}</p>
         </md-fab-actions>
     </md-toolbar>
     <section>
@@ -12,7 +12,7 @@
             <md-list-item ng-repeat-start="new in nc.news" class="md-3-line" ng-click="nc.showNew(new)" ng-if="nc.showList">
                 <img ng-src="{{new.image}}" alt="{{new.title}}" width="60px" height="60px" class="md-avatar" />
                 <div class="md-list-item-text" layout="column">
-                    <h3>{{new.title | lowercase | capitalize}}</h3>
+                    <p>{{new.title | lowercase | capitalize}}</p>
                 </div>
             </md-list-item>
             <md-card ng-repeat-end ng-if="new.show">
