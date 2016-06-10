@@ -68,39 +68,6 @@ md-content{
             
 }
 
-/* The starting CSS styles for the enter animation 
-.fade.ng-enter {
-  transition:0.5s linear all;
-  width: 0%;
-}*/
-
-/* The finishing CSS styles for the enter animation 
-.fade.ng-enter.ng-enter-active {
-  width: 100%;
-}*/
-
-/*.fade.ng-leave {
-  transition:0.5s linear all;
-  width: 100%;
-}
-.fade.ng-leave.ng-leave-active {
-  width: 0%;
-}*/
-
-/*md-list-item.ng-enter {
-    transition: all 0.19s linear;
-    width: 0%;
-}
-md-list-item.ng-enter.ng-enter-active {
-    width:120%;
-}
-
-
-md-list-item.ng-enter-stagger{
-    transition-delay: 0.09s;
-    transition-duration: 0s;
-}*/
-
 md-list-item.ng-enter {
     animation: list-animation 0.4s linear;
 }
@@ -148,4 +115,21 @@ md-content.ng-enter {
   100% {
     padding-top: 10%;
   }
+}
+
+
+md-card.ng-enter {
+    max-height: 0;
+    transition:0.5s linear all;
+}
+md-card.ng-enter-active {
+    max-height: 540px;
+}
+
+md-card.ng-leave {
+    max-height: 540px;
+    transition:0.5s linear all;
+}
+md-card.ng-leave-active {
+    max-height: 0;
 }
