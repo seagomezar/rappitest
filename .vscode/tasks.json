@@ -8,6 +8,13 @@
             "isBuildCommand": true,
             "showOutput": "always",
             "isWatching": true
+        },
+        {
+            "taskName": "test",
+            "isBuildCommand": true,
+            "showOutput": "always",
+            "isWatching": true
         }
+        
     ]
 }
