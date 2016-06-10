@@ -5,7 +5,7 @@ $wrapper_color: #D4D4D4;
 $title_color: #DDEBEB;
 $text_color: #BDC9CE;
 $menu_radius: 10px;
-$external_padding: 10% 10% 0 10%;
+$external_padding: 10% 0 0 10%;
 $menu_height: 80px;
 
 .material-icons.md-60 { font-size: 60px; }
@@ -21,12 +21,11 @@ md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar{
 }
 
 md-content{
-    width: 100%;
     min-height: 600px;
     background-color: $background_color;
     padding: $external_padding;
     &>md-toolbar{
-        width: 80%;
+        width: 90%;
         height: $menu_height;
         background-color: $menu_color !important;
         border-top-left-radius: $menu_radius;
@@ -47,7 +46,7 @@ md-content{
         }
     }
     &>section{
-        width: 80%;
+        width: 90%;
         background-color: $wrapper_color;
         min-height: 600px;
         
@@ -56,6 +55,7 @@ md-content{
             margin-right: 7%;
             padding-top: 24px;
             &>md-list-item{
+                width: 100%;
                 background-color: $white_color;
                 margin-bottom: 5px;
             }
@@ -64,4 +64,63 @@ md-content{
             
 }
 
+/* The starting CSS styles for the enter animation 
+.fade.ng-enter {
+  transition:0.5s linear all;
+  width: 0%;
+}*/
 
+/* The finishing CSS styles for the enter animation 
+.fade.ng-enter.ng-enter-active {
+  width: 100%;
+}*/
+
+/*.fade.ng-leave {
+  transition:0.5s linear all;
+  width: 100%;
+}
+.fade.ng-leave.ng-leave-active {
+  width: 0%;
+}*/
+
+/*md-list-item.ng-enter {
+    transition: all 0.19s linear;
+    width: 0%;
+}
+md-list-item.ng-enter.ng-enter-active {
+    width:120%;
+}
+
+
+md-list-item.ng-enter-stagger{
+    transition-delay: 0.09s;
+    transition-duration: 0s;
+}*/
+
+md-list-item.ng-enter {
+    animation: list-animation 0.4s linear;
+    width: 0%;
+}
+
+md-list-item.ng-enter-stagger{
+    animation-delay: 0.1s;
+    animation-duration: 0s;
+}
+
+@keyframes list-animation{
+    0% {
+    width: 0%;
+  }
+  50% {
+    width: 120%;
+  }
+  90% {
+    width: 85%;
+  }
+  99% {
+    width: 101%;
+  }
+  100% {
+    width: 100%;
+  }
+}

@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('myApp.controllers', [])
+    .module('myApp.controllers', ['ngAnimate'])
     .controller('NewsController', NewsController)
     .filter('capitalize', function () {
       return function (input, all) {

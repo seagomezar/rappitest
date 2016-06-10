@@ -8,8 +8,8 @@
         </md-fab-actions>
     </md-toolbar>
     <section>
-        <md-list flex  ng-show="nc.showList">
-            <md-list-item ng-repeat-start="new in nc.news" class="md-3-line" ng-click="nc.showNew(new)">
+        <md-list flex>
+            <md-list-item ng-repeat-start="new in nc.news" class="md-3-line" ng-click="nc.showNew(new)" ng-if="nc.showList">
                 <img ng-src="{{new.image}}" alt="{{new.title}}" width="60px" height="60px" class="md-avatar" />
                 <div class="md-list-item-text" layout="column">
                     <h3>{{new.title | lowercase | capitalize}}</h3>

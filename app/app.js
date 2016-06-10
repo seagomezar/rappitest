@@ -7,7 +7,7 @@ angular.module('myApp', [
   'myApp.controllers',
   'myApp.services'
 ])
-.constant('APIURL', 'http://localhost:8000/news_mock.json')
+.constant('APIURL', 'http://localhost:8100/news_mock.json')
 .config(function($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
       templateUrl: 'news/index.html',
