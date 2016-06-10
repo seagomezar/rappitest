@@ -8,6 +8,10 @@ $menu_radius: 10px;
 $external_padding: 10% 0 0 10%;
 $menu_height: 80px;
 
+body{
+    background-color: $background_color;
+}
+
 .material-icons.md-60 { font-size: 60px; }
 .md-subhead{
     text-align: justify;
@@ -99,7 +103,6 @@ md-list-item.ng-enter-stagger{
 
 md-list-item.ng-enter {
     animation: list-animation 0.4s linear;
-    width: 0%;
 }
 
 md-list-item.ng-enter-stagger{
@@ -108,7 +111,7 @@ md-list-item.ng-enter-stagger{
 }
 
 @keyframes list-animation{
-    0% {
+  0% {
     width: 0%;
   }
   50% {
@@ -117,10 +120,32 @@ md-list-item.ng-enter-stagger{
   90% {
     width: 85%;
   }
-  99% {
-    width: 101%;
+  98% {
+    width: 102%;
   }
   100% {
     width: 100%;
+  }
+}
+
+md-content.ng-enter {
+    animation: content-animation 0.3s linear;
+}
+
+@keyframes content-animation{
+  0% {
+    padding-top: 600px;
+  }
+  60% {
+    padding-top: 0px;
+  }
+  90% {
+    padding-top: 15%;
+  }
+  95% {
+    padding-top: 8%;
+  }
+  100% {
+    padding-top: 10%;
   }
 }

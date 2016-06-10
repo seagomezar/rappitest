@@ -11,8 +11,8 @@
       }
     });
 
-  NewsController.$inject = ['newsService', '$log'];
-  function NewsController(newsService, $log) {
+  NewsController.$inject = ['newsService', '$log', '$timeout'];
+  function NewsController(newsService, $log, $timeout) {
     var vm = this;
 
     vm.showList = false;
@@ -51,6 +51,9 @@
       newsService.getNews().then(function (data) {
         vm.news = data;
       });
+      $timeout(function() {
+        vm.ready = true;
+    }, 1000);
     }
   }
 })();
