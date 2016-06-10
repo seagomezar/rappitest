@@ -6,10 +6,19 @@ $title_color: #DDEBEB;
 $text_color: #BDC9CE;
 $menu_radius: 10px;
 $external_padding: 10% 10% 0 10%;
-$list_margin: 10%;
 $menu_height: 80px;
 
 .material-icons.md-60 { font-size: 60px; }
+.md-subhead{
+    text-align: justify;
+}
+md-card{
+    margin: 0 0 5px 0 !important;
+}
+md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar{
+    width: 60px;
+    height: 60px;
+}
 
 md-content{
     width: 100%;
@@ -41,6 +50,16 @@ md-content{
         width: 80%;
         background-color: $wrapper_color;
         min-height: 600px;
+        
+        &>md-list{
+            margin-left: 8%;
+            margin-right: 7%;
+            padding-top: 24px;
+            &>md-list-item{
+                background-color: $white_color;
+                margin-bottom: 5px;
+            }
+        }
     }
             
 }
