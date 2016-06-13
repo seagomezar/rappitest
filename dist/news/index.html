@@ -1,0 +1,34 @@
+<md-progress-linear class="md-warn" md-mode="indeterminate" ng-if="!nc.ready"></md-progress-linear>
+<md-content ng-if="nc.ready">
+    <md-toolbar>
+        <md-fab-actions class="md-toolbar-tools">
+            <md-button aria-label="comment" class="md-icon-button" ng-click="nc.showNews()">
+                <md-icon class="md-60" >drag_handle</md-icon>
+            </md-button>
+            <p>{{nc.headTitle  | lowercase | capitalize}}</p>
+        </md-fab-actions>
+    </md-toolbar>
+    <section>
+        <md-list flex>
+            <md-list-item ng-repeat-start="new in nc.news" class="md-3-line" ng-click="nc.showNew(new)" ng-if="nc.showList">
+                <img ng-src="{{new.image}}" alt="{{new.title}}" width="60px" height="60px" class="md-avatar" />
+                <div class="md-list-item-text" layout="column">
+                    <p>{{new.title | lowercase | capitalize}}</p>
+                </div>
+            </md-list-item>
+            <md-card ng-repeat-end ng-if="new.show">
+                <md-card-title>
+                    <md-card-title-media>
+                        <div class="md-media-lg card-media">
+                            <img ng-src="{{new.image}}" alt="{{new.title}}" />
+                        </div>
+                    </md-card-title-media>
+                    <md-card-title-text class="md-padding">
+                        <span class="md-headline">{{new.title | lowercase | capitalize}}</span>
+                        <span class="md-subhead">{{new.content | lowercase | capitalize}}</span>
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
+        </md-list>
+    </section>
+</md-content>
