@@ -1,6 +1,7 @@
-'use strict';
+(function() {
+  'use strict';
 
-// Declare app level module which depends on views, and components
+  // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
   'ngMaterial',
@@ -15,3 +16,6 @@ angular.module('myApp', [
       controllerAs: 'nc'
     })
   });
+})();
+
+

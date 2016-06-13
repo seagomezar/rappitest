@@ -50,7 +50,7 @@
     function activate() {
       newsService.getNews().then(function (data) {
         vm.news = data;
-        vm.ready = true;
+        vm.ready = true;   
       });
     }
   }

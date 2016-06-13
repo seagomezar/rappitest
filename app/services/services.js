@@ -17,7 +17,7 @@
             }
 
             function getNewsFailed(error) {
-                $log.error('XHR Failed for getAvengers.' + error);
+                $log.error('XHR Failed for getNews.' + error);
                 return error;
             }
         }
