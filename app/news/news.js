@@ -1,6 +1,11 @@
 (function () {
   'use strict';
 
+  /**TODO: ACABAR LOS TEST UNITARIOS Y LOS END2END
+   * ARREGLAR EL README
+   * CREAR LA TAREA DE MINIFICACION
+   */
+
   angular
     .module('myApp.controllers', ['ngAnimate'])
     .controller('NewsController', NewsController)
@@ -11,11 +16,12 @@
       }
     });
 
-  NewsController.$inject = ['newsService', '$log', '$timeout'];
-  function NewsController(newsService, $log, $timeout) {
+  NewsController.$inject = ['newsService', '$log'];
+  function NewsController(newsService, $log) {
     var vm = this;
 
     vm.showList = false;
+    vm.ready = false;
 
     vm.showNews = function(){
       vm.showList = !vm.showList;
@@ -36,7 +42,7 @@
           }
         }
         else{
-          e.show = 0;
+          e.show = false;
         }
       });
     };
@@ -47,13 +53,10 @@
     ////////////////
 
     function activate() {
-      $log.info('newsController working');
       newsService.getNews().then(function (data) {
         vm.news = data;
-      });
-      $timeout(function() {
         vm.ready = true;
-    }, 1000);
+      });
     }
   }
 })();
