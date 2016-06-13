@@ -15,7 +15,8 @@ module.exports = function(config) {
       'bower_components/angular-material/angular-material-mocks.js',
 
       'app.js',
-      'services.js',
+      'services/services.js',
+      'services/services_test.js',
       'news/news.js',
       'news/news_test.js'
     ],
