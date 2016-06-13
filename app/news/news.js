@@ -1,11 +1,6 @@
 (function () {
   'use strict';
 
-  /**TODO: ACABAR LOS TEST UNITARIOS Y LOS END2END
-   * ARREGLAR EL README
-   * CREAR LA TAREA DE MINIFICACION
-   */
-
   angular
     .module('myApp.controllers', ['ngAnimate'])
     .controller('NewsController', NewsController)
